@@ -3,12 +3,16 @@ const { createApp } = Vue
 createApp({
   data() {
     return {
-      message: 'Hello Vue!'
+      apiUrl: "server.php",
+      list: [],
     }
   },
   methods:{
     getApi(){
-      console.log("getApi");
+      axios.get(this.apiUrl)
+        .then(result => {
+          this.list = result.data
+        })
     }
   },
   mounted(){

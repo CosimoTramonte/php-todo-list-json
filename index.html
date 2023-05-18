@@ -31,64 +31,12 @@
                 
                 <ul class="task-list">
 
-                    <li class="single-task d-flex justify-content-between">
+                    <li v-for="(task,index) in list" :key="index" class="single-task d-flex justify-content-between">
 
                         <div class="textDiv">
-                            <span>testo della task</span>
+                            <span>{{task.text}}</span>
                         </div>
 
-                        <div class="actionDiv d-flex justify-content-between">
-                            <span class="px-3">check-box</span>
-                            <span>cestino</span>
-                        </div>
-
-                    </li>
-
-                    <li class="single-task d-flex justify-content-between">
-
-                        <div class="textDiv">
-                            <span>testo della task</span>
-                        </div>
-                        
-                        <div class="actionDiv d-flex justify-content-between">
-                            <span class="px-3">check-box</span>
-                            <span>cestino</span>
-                        </div>
-
-                    </li>
-
-                    <li class="single-task d-flex justify-content-between">
-
-                        <div class="textDiv">
-                            <span>testo della task</span>
-                        </div>
-                        
-                        <div class="actionDiv d-flex justify-content-between">
-                            <span class="px-3">check-box</span>
-                            <span>cestino</span>
-                        </div>
-
-                    </li>
-
-                    <li class="single-task d-flex justify-content-between">
-
-                        <div class="textDiv">
-                            <span>testo della task</span>
-                        </div>
-                        
-                        <div class="actionDiv d-flex justify-content-between">
-                            <span class="px-3">check-box</span>
-                            <span>cestino</span>
-                        </div>
-
-                    </li>
-
-                    <li class="single-task d-flex justify-content-between">
-
-                        <div class="textDiv">
-                            <span>testo della task</span>
-                        </div>
-                        
                         <div class="actionDiv d-flex justify-content-between">
                             <span class="px-3">check-box</span>
                             <span>cestino</span>
