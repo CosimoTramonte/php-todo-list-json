@@ -30,8 +30,16 @@ createApp({
         })
     },
 
-    removeTask(){
-      console.log("rimosso");
+    removeTask(index){
+      const data = new FormData()
+      data.append("indexTaskRemove",index)
+
+      axios.post(this.apiUrl, data)
+        .then(result =>{
+          this.newTask = "",
+          this.list = result.data
+          console.log("ecco la nuova lista");
+        })
     }
 
   },

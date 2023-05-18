@@ -13,7 +13,15 @@ if(isset($_POST["taskText"])){
 
     $list[] = $newTask;
     filePutContents($list);
-}
+};
+
+if(isset($_POST["indexTaskRemove"])){
+    array_splice($list, $_POST["indexTaskRemove"], 1);
+    filePutContents($list);
+};
+
+
+
 
 header("Content-Type: application/json");
 
