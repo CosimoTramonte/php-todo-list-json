@@ -42,9 +42,26 @@
     border: 1px solid black;
     border-radius: 20px;
     padding: 20px 20px;
+    margin-top: 100px;
 }
 
 .actionDiv span:first-of-type input[type='checkbox']:checked {
     background-color:#E83B49!important;
     border-color: #E83B49 !important;
+}
+
+hr{
+    margin: 0;
+    color: #E83B49;
+}
+
+.errorContainer{
+    text-align: center;
+    margin: 20px 0;
+    right: 50%;
+    transform: translate(+50%, 0%);
+}
+
+.errorTask{
+    color: #E83B49;
 }

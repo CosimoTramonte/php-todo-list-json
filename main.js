@@ -6,6 +6,7 @@ createApp({
       apiUrl: "server.php",
       list: [],
       newTask:"",
+      message: "",
     }
   },
   methods:{
@@ -18,19 +19,31 @@ createApp({
     },
 
     addNewTask(){
-      const data = new FormData()
-      data.append("taskText",this.newTask)
-      data.append("isDone", false)
 
-      axios.post(this.apiUrl, data)
-        .then(result =>{
-          this.newTask = "",
-          this.list = result.data
-          console.log("ecco la nuova lista");
-        })
+      if(this.newTask.length < 4){
+        this.message = `Mi dispiace, devi inserire un testo di almeno 5 caratteri`
+
+        setTimeout(() => {
+            this.message= ""
+        }, 3000)
+
+      } else {
+        const data = new FormData()
+        data.append("taskText",this.newTask)
+        data.append("isDone", false)
+
+        axios.post(this.apiUrl, data)
+          .then(result =>{
+            this.newTask = "",
+            this.list = result.data
+            console.log("ecco la nuova lista");
+          })
+      }
     },
 
     removeTask(index){
+
+      if(this.list[index].isDone === true){
         const data = new FormData()
         data.append("indexTaskRemove",index)
   
@@ -38,14 +51,19 @@ createApp({
           .then(result =>{
             this.newTask = "",
             this.list = result.data
-            console.log("ecco la nuova lista");
           })
+      } else {
+        this.message = `Mi dispiace, devi completare prima la task per poterla eliminare`
+
+        setTimeout(() => {
+            this.message= ""
+        }, 3000)
+      }
     },
 
     isDone(index){
-      this.list[index].isDone
-      console.log(this.list[index].isDone)
-      console.log(index);
+      this.list[index].isDone = !this.list[index].isDone
+
 
       const data = new FormData()
       data.append("isDoneOrNot",this.list[index].isDone)
@@ -53,9 +71,7 @@ createApp({
 
       axios.post(this.apiUrl, data)
       .then(result =>{
-        this.newTask = "",
         this.list = result.data
-        console.log("ecco la nuova lista");
       })
     }
   },

@@ -22,8 +22,8 @@ if(isset($_POST["indexTaskRemove"])){
 
 if(isset($_POST["isDoneOrNot"])){
 
-        
-
+    $list[$_POST["indexTask"]]["isDone"] = filter_var($_POST["isDoneOrNot"], FILTER_VALIDATE_BOOLEAN);
+    filePutContents($list);
 }
 
 

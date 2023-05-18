@@ -14,7 +14,7 @@
 <body>
 
     <div id="app">
-        <div class="container">
+        <div class="container position-relative">
 
             <div class="logo">
                 <img src="img/logo.png" alt="Logo">
@@ -27,10 +27,16 @@
                 <button @click="addNewTask" type="button" class="btn btn-danger">Aggiungi</button>
                 
             </div>
+
+            <div class="errorContainer position-absolute">
+                <span class="errorTask"><strong>{{message}}</strong></span>
+            </div>
     
             <div class="container w-75">
+
+                <h2 v-if="list.length === 0">Non ci sono più task &#128521</h2>
                 
-                <ul class="task-list">
+                <ul v-else class="task-list">
 
                     <li v-for="(task,index) in list" :key="index" class="single-task d-flex justify-content-between">
 
