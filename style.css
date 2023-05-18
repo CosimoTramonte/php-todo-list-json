@@ -1,0 +1,45 @@
+.logo{
+    text-align: center;
+    margin: 10px 0;
+}
+
+.logo img{
+    width: 30%;
+}
+
+.input-area{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.input-area input{
+    width: 30%;
+    margin-right: 20px;
+}
+
+.input-area button{
+    background-color: #E83B49 !important;
+}
+
+.task-list{
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.task-list li{
+    list-style: none;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.281);
+}
+
+.task-list li:hover{
+    background-color: #FFEE03;
+}
+
+.container.w-75{
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 20px 20px;
+}
