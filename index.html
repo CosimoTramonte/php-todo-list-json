@@ -38,8 +38,8 @@
                             <span>{{task.taskText}}</span>
                         </div>
 
-                        <div class="actionDiv d-flex justify-content-between">
-                            <span class="px-3">check-box</span>
+                        <div class="actionDiv d-flex justify-content-between align-items-center">
+                            <span class="px-3 d-flex"><input @click="isDone(index)" class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input" :checked="task.isDone"></span>
                             <span @click="removeTask(index)" class="px-3"><i class="fa-solid fa-trash"></i></span>
                         </div>
 

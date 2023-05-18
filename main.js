@@ -31,17 +31,33 @@ createApp({
     },
 
     removeTask(index){
+        const data = new FormData()
+        data.append("indexTaskRemove",index)
+  
+        axios.post(this.apiUrl, data)
+          .then(result =>{
+            this.newTask = "",
+            this.list = result.data
+            console.log("ecco la nuova lista");
+          })
+    },
+
+    isDone(index){
+      this.list[index].isDone
+      console.log(this.list[index].isDone)
+      console.log(index);
+
       const data = new FormData()
-      data.append("indexTaskRemove",index)
+      data.append("isDoneOrNot",this.list[index].isDone)
+      data.append("indexTask",index)
 
       axios.post(this.apiUrl, data)
-        .then(result =>{
-          this.newTask = "",
-          this.list = result.data
-          console.log("ecco la nuova lista");
-        })
+      .then(result =>{
+        this.newTask = "",
+        this.list = result.data
+        console.log("ecco la nuova lista");
+      })
     }
-
   },
   mounted(){
     this.getApi()

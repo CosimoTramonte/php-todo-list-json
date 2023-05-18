@@ -20,6 +20,12 @@ if(isset($_POST["indexTaskRemove"])){
     filePutContents($list);
 };
 
+if(isset($_POST["isDoneOrNot"])){
+
+        
+
+}
+
 
 
 

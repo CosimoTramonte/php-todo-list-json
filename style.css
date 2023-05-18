@@ -43,3 +43,8 @@
     border-radius: 20px;
     padding: 20px 20px;
 }
+
+.actionDiv span:first-of-type input[type='checkbox']:checked {
+    background-color:#E83B49!important;
+    border-color: #E83B49 !important;
+}
